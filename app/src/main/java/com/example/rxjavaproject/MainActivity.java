@@ -144,10 +144,10 @@ public class MainActivity extends AppCompatActivity {
         List<Student> studentList = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             if (i % 2 == 0 || i % 3 == 0) {
-                Student student = new Student(i, "Amol");
+                Student student = new Student(i, "Amol",(i*10)%100);
                 studentList.add(student);
             } else {
-                Student student = new Student(i, "Prateek");
+                Student student = new Student(i, "Prateek",(i*10)%100);
                 studentList.add(student);
             }
         }

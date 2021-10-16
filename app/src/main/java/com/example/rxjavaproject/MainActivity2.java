@@ -14,6 +14,8 @@ import java.util.List;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.ObservableEmitter;
+import io.reactivex.rxjava3.core.ObservableOnSubscribe;
 import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.functions.Predicate;
@@ -29,6 +31,7 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         textView = findViewById(R.id.textview);
+        //RxJava - 1st we part
         Task task = new Task(1, "Go to Gym", true);
         Observable<Task> integerObservable = Observable.
                 fromIterable(getTaskList())
@@ -66,8 +69,11 @@ public class MainActivity2 extends AppCompatActivity {
                 textView.setText(data + "\n");
             }
         };
-
         integerObservable.subscribe(integerObserver);
+
+
+
+
     }
 
     private List<Task> getTaskList() {
